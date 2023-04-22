@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prema Properties Consulting (PTY) LTD</title>
     <link rel="stylesheet" href="css/style.css">
-    <style href="javascript/app.js"></style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <header>
 <!---Header Details Go Here-->
         <nav class="nav">
-            <label class="logo"><a href="index.html"><img src="images/LogoMakr-7O1A1A.png"></a></label>
-            <ul>
+            <div class="logo"><a href="index.html"><img src="images/LogoMakr-7O1A1A.png"></a></div>
+            <ul class="links">
                 <li><a href="#" class="">Home</a></li>
                 <li><a href="about.html" class="">About</a></li>
                 <li><a href="contact.html" class="">Contact Us</a></li>
@@ -21,32 +24,57 @@
                 <li><a href="services.html" class="">Service</a></li>
                 <li><a href="quote.html" class="">Get A Quotation</a></li>
             </ul>
+            <a href="#" class="action_btn">Get Started</a>
 
-            <div class="container-fluid">
-                <div class="row max-height justify-content-center align-items-center">
-                    <div class="col-10 mx-auto banner text-center">
-
-                    </div>
-                </div>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
+        <div class="dropdown_menu open">
+            <li><a href="#" class="">Home</a></li>
+            <li><a href="about.html" class="">About</a></li>
+            <li><a href="contact.html" class="">Contact Us</a></li>
+            <li><a href="portfolio.html" class="">Portfolio</a></li>
+            <li><a href="services.html" class="">Service</a></li>
+            <li><a href="quote.html" class="">Get A Quotation</a></li>
+            <a href="#" class="action_btn">Get Started</a>
+        </div>
         <div class="home-about">
             <h1 class="Company Motto">
                 Company Motto
             </h1>
             <a href="portfolio.html">
-                Our Portfolio
+                <span class="portfolio">
+                    Our Portfolio
+                </span>
+            </a>
+            <a href="portfolio.html">
+                <span class="portfolio">
+                    For Sale
+                </span>
+            </a>
+            <a href="portfolio.html">
+                <span class="portfolio">
+                    To Rent
+                </span>
             </a>
         </div>
     </header>
     <section class="main">
-        <div class="short company description">
+        <div class="about-company">
              <h2 class="short_topic">
                 Prema Properties
+                <p>A small his about Prema Properties</p>
              </h2>
          </div>
-        <div class="short about the company">
-            <h3>Get a quotation. <a href="quote.html">Click Here to get a quotation</h3>
+        <div class="quotation">
+            <h2>
+                Get a quotation. <a href="quote.html">Click Here to get a quotation</a>
+            </h2>
+        </div>
+        <div class="slide">
+            <h2>Our Services</h2>
+            A slider showing the services offered by Prema Properties
         </div>
     </section>
     
@@ -54,4 +82,5 @@
 
     </footer>
 </body>
+<script type="text/javascript" src="javascript/app.js"></script>
 </html>
