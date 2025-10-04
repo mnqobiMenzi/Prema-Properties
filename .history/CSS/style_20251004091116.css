@@ -68,12 +68,12 @@ header nav a.active {
   margin-top: 20px;
   padding: 10px 20px;
   background: rgb(223, 223, 71);
-  color: black;
+  color: white;
   border-radius: 5px;
   text-decoration: none;
 }
 .hero .btn:hover {
-  background: rgba(128, 128, 128, 0.3);
+  background: #cc5200;
 }
 
 /* Sections */

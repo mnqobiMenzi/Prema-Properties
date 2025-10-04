@@ -73,7 +73,7 @@ header nav a.active {
   text-decoration: none;
 }
 .hero .btn:hover {
-  background: rgba(128, 128, 128, 0.3);
+  background: #cc5200;
 }
 
 /* Sections */
