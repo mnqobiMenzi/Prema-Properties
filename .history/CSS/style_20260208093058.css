@@ -1,0 +1,343 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.my-custom-icon {
+    font-size: 24px;
+    color: #0c4a6e;
+}
+body {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #004466;
+  color: #fff;
+  z-index: 1000;
+}
+header .logo {
+  font-size: 1.5em;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+header nav a {
+  margin: 0 10px;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+header nav a:hover {
+  color: #fff;
+  background: rgba(128, 128, 128, 0.3);
+  padding-bottom: 3px;
+}
+/* Active link */
+header nav a.active {
+  background: rgba(128, 128, 128, 0.3);
+  font-weight: bold;
+  color: rgb(223, 223, 71);
+}
+/* Hero */
+.hero {
+  background-image: url('C:/Users/21311/OneDrive/Desktop/Prema Properties/images/Sectional-Title-Disputes.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120vh;
+  width: 100%;
+  background-color: #3f607d;
+  color: white;
+  text-align: center;
+  padding: 85mm 20px;
+  position: relative;
+}
+/* Optional: overlay for better text readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* dark overlay */
+  z-index: 1;
+}
+
+.hero h1, .hero p, .hero .btn {
+  position: relative;
+  z-index: 2; /* ensure text is above overlay */
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+.hero .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: rgb(223, 223, 71);
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Custom color for the "Get in Touch" button */
+#contact {
+    /* Use a contrasting color for the primary CTA */
+    background: #f7b731; /* A distinct gold/yellow color */
+    color: #1a1a1a;      /* Ensure text is dark and readable */
+}
+
+/* Custom color for the "Get a Quote" button */
+#quote {
+    /* Use your brand's dark blue/teal color */
+    background: #0c4a6e; /* A deep blue color */
+    color: white;        /* White text for contrast */
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: rgb(223, 223, 71);
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+#contact:hover {
+  background: rgba(128, 128, 128, 0.3);
+}
+/* Optional: Custom hover effect for the 'Get a Quote' button */
+#quote:hover {
+    background:  rgba(128, 128, 128, 0.3); /* Darken the blue slightly on hover */
+}
+/* Sections */
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services{
+  background-color: rgba(219, 214, 214, 0.3);
+}
+.services .service-list{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.service {
+  background-color: rgba(128, 128, 128, 0.3);
+  padding: 10px 10px;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.service .service-description{
+  text-align: left;
+}
+/* Target the parent section */
+.about {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 60px;
+    margin-top: 10px;
+}
+
+.about article:first-child {
+    width: 25%;
+    text-align: left;
+}
+
+.about article:last-child {
+    width: 65%;
+    text-align: left;
+}
+
+.about-article h2{
+  font-weight: bolder;
+  font-size: 2.2rem;
+}
+
+section article p{
+  padding-bottom: 10mm;
+}
+
+section article a{
+  text-decoration: none;
+  color: #352812;
+  font-weight: bolder;
+  font-size: 1.8rem;
+}
+
+/* Contact */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+.contact input, .contact textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact button {
+  padding: 10px;
+  border: none;
+  background: #004466;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+.choose-content {
+  display: flex;              /* Makes text + image side by side */
+  align-items: center;        /* Aligns them vertically */
+  justify-content: space-between;
+  gap: 20px;                  /* Space between text and image */
+}
+
+.choose-text {
+  flex: 1;                    /* Take available space */
+  max-width: 50%;             /* Text side only half width */
+}
+
+.choose-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.choose-text p {
+  line-height: 1.6;
+  color: #555;
+  text-align
+}
+
+.choose-image {
+  flex: 1;
+  max-width: 50%;             /* Image takes half width */
+}
+
+.choose-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;        /* Rounded corners for style */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+.contact button:hover {
+  background: #00334d;
+}
+
+
+
+/*About Page*/
+/* Color Palette */
+:root {
+  --primary: #1a365d; /* Professional Navy */
+  --secondary: #c05621; /* Earthy accent for trust */
+  --light-bg: #f7fafc;
+  --text-dark: #2d3748;
+}
+
+/* Header/Nav Updates */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+nav a.active { color: var(--secondary); border-bottom: 2px solid var(--secondary); }
+
+/* About Page Layout */
+.about-container {
+  padding: 60px 5%;
+  color: var(--text-dark);
+}
+
+.about-hero {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.about-hero h1 { font-size: 2.5rem; color: var(--primary); }
+
+.lead { font-size: 1.2rem; color: #718096; max-width: 700px; margin: 10px auto; }
+
+/* Values Grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.value-item {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  border-bottom: 4px solid var(--primary);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.value-item .icon { font-size: 2.5rem; display: block; margin-bottom: 15px; }
+
+.value-item h3 { color: var(--primary); margin-bottom: 10px; }
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+/* Footer */
+footer {
+  background: #004466;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}

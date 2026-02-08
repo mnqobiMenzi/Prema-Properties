@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prema Properties</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="logo">Prema Properties</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about-us.html">About</a>
+      <a href="contact-us.html">Contact</a>
+      <a href="services.html">Services</a>
+      <a href="appointment.html">Book an Appointment</a>
+      <a href="#quote"  class="active">Get a quotation</a>
+      <a href="FAQ.html">FAQ</a>
+    </nav>
+  </header>
+
+<section class="quote-page container reveal">
+    <div class="quote-header">
+      <h1>Request a Consulting Proposal</h1>
+      <p>Provide us with your scheme details, and we’ll prepare a tailored quotation within 24 hours.</p>
+    </div>
+
+    <div class="quote-container">
+      <form id="quoteForm">
+        
+        <div class="form-section">
+          <h3>1. Contact Information</h3>
+          <div class="form-row">
+            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="Your Role (e.g. Trustee, Owner)" required>
+          </div>
+          <div class="form-row">
+            <input type="email" placeholder="Email Address" required>
+            <input type="tel" placeholder="Phone Number" required>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>2. Scheme Information</h3>
+          <div class="form-row">
+            <input type="text" placeholder="Name of Body Corporate / HOA" required>
+            <select required>
+              <option value="" disabled selected>Scheme Type</option>
+              <option value="res">Residential</option>
+              <option value="comm">Commercial</option>
+              <option value="mixed">Mixed-Use</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <input type="number" placeholder="Number of Units" required>
+            <input type="text" placeholder="City/Region">
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>3. Scope of Work</h3>
+          <p class="form-hint">Select the services you require a quote for:</p>
+          <div class="checkbox-grid">
+            <label><input type="checkbox" name="service" value="compliance"> Governance Audit</label>
+            <label><input type="checkbox" name="service" value="dispute"> Dispute Resolution</label>
+            <label><input type="checkbox" name="service" value="financial"> 10-Year M&R Plan</label>
+            <label><input type="checkbox" name="service" value="training"> Trustee Training</label>
+          </div>
+          <textarea placeholder="Additional details or specific challenges you are facing..." rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Generate Quote Request</button>
+      </form>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Prema Properties. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
