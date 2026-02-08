@@ -22,7 +22,60 @@
     </nav>
   </header>
 
+  <section class="appointment-container container reveal">
+    <div class="appointment-grid">
+      
+      <div class="appointment-info">
+        <span class="label">Consultation</span>
+        <h2>Schedule a Session</h2>
+        <p>Select a time that works for you. Our consultations are designed to provide immediate clarity on scheme management and compliance.</p>
+        
+        <div class="meeting-types">
+          <div class="m-type">
+            <strong>Introductory Call</strong>
+            <span>15 Mins | Complimentary</span>
+          </div>
+          <div class="m-type">
+            <strong>Trustee Strategy Session</strong>
+            <span>60 Mins | Professional Rate</span>
+          </div>
+        </div>
+      </div>
 
+      <div class="booking-card">
+        <form id="appointmentForm">
+          <div class="form-row">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Select Service</label>
+            <select required>
+              <option value="intro">Introductory Call</option>
+              <option value="compliance">Compliance Review</option>
+              <option value="dispute">Dispute Mediation</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Preferred Date</label>
+              <input type="date" required>
+            </div>
+            <div class="form-group">
+              <label>Preferred Time</label>
+              <input type="time" required>
+            </div>
+          </div>
+
+          <textarea placeholder="Briefly describe the matter (e.g., Body Corporate Name)" rows="4"></textarea>
+          
+          <button type="submit" class="submit-btn">Confirm Booking Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
   <!-- Footer -->
   <footer>
     <p>© 2025 Prema Properties. All rights reserved.</p>
