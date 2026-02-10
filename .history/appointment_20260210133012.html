@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Consultation | Prema Properties</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container header-flex">
+      <div class="logo">Prema<span>Properties</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="appointment.html" class="active">Book Appointment</a>
+        <a href="quote.html" class="nav-btn">Get a Quotation</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="appointment-hero-v2">
+    <div class="container">
+      <h1>Expert Guidance on Your Schedule</h1>
+      <p>Secure a session with our lead consultants to resolve scheme complexities.</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="appointment-wrapper">
+        
+        <div class="appointment-info-box">
+          <span class="label">Consultation Options</span>
+          <h2>Select Your Session Type</h2>
+          <p>Our consultations provide immediate clarity on Sectional Title law, the STSM Act, and retirement village governance.</p>
+          
+          <div class="meeting-card-list">
+            <div class="m-card">
+              <div class="m-icon"><i class="bi bi-telephone-outbound"></i></div>
+              <div>
+                <strong>Discovery Call</strong>
+                <p>15 Mins | Complimentary introductory session to assess your needs.</p>
+              </div>
+            </div>
+            
+            <div class="m-card featured-m">
+              <div class="m-icon"><i class="bi bi-briefcase"></i></div>
+              <div>
+                <strong>Strategic Review</strong>
+                <p>60 Mins | Deep-dive into compliance, financial plans, or dispute resolution.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-note">
+            <p><i class="bi bi-info-circle"></i> Once submitted, our team will confirm your slot within 4 business hours.</p>
+          </div>
+        </div>
+
+        <div class="booking-form-card">
+          <form id="appointmentForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="john@example.com" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Service Required</label>
+              <select required>
+                <option value="intro">Introductory Discovery Call</option>
+                <option value="compliance">Full Compliance Audit Review</option>
+                <option value="dispute">Mediation & Dispute Session</option>
+                <option value="retirement">Retirement Scheme Life Right Advisory</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Preferred Date</label>
+                <input type="date" required>
+              </div>
+              <div class="form-group">
+                <label>Preferred Time</label>
+                <input type="time" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Case Details / Scheme Name</label>
+              <textarea placeholder="Please provide the name of the Body Corporate or a brief summary of the matter..." rows="4"></textarea>
+            </div>
+            
+            <button type="submit" class="quote-submit-btn">
+                Generate Proposal Request <i class="bi bi-file-earmark-pdf"></i>
+</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="JavaScript/script.js"></script>
+</body>
+</html>

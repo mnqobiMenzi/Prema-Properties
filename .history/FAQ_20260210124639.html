@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | Prema Properties</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container header-flex">
+      <div class="logo">Prema<span>Properties</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="FAQ.html" class="active">FAQ</a>
+        <a href="quote.html" class="nav-btn">Get a Quotation</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="faq-hero">
+    <div class="container">
+      <span class="badge">Knowledge Base</span>
+      <h1>Common Questions</h1>
+      <p>Clear, expert answers to help you navigate Sectional Title management.</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="faq-layout">
+        
+        <div class="faq-sidebar">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="#governance" class="active">Governance</a></li>
+            <li><a href="#financial">Financial</a></li>
+            <li><a href="#disputes">Disputes</a></li>
+          </ul>
+        </div>
+
+        <div class="faq-accordion">
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              What is the role of a Sectional Title Consultant? 
+              <i class="bi bi-plus-lg"></i>
+            </button>
+            <div class="faq-answer">
+              <p>A consultant acts as an expert advisor to the Body Corporate. While a Managing Agent handles day-to-day admin, we focus on complex legal compliance, dispute mediation, and long-term financial strategy to ensure the scheme is governed correctly under the STSM Act.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              How are trustees elected and what are their duties? 
+              <i class="bi bi-plus-lg"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Trustees are elected by members at the AGM. Their primary duty is to act in good faith and manage the scheme's affairs on behalf of the Body Corporate, ensuring rules are enforced and finances are managed responsibly.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              What happens if an owner fails to pay their levies? 
+              <i class="bi bi-plus-lg"></i>
+            </button>
+            <div class="faq-answer">
+              <p>The Body Corporate has a legal obligation to collect levies. We assist in the structured recovery process, which involves CSOS applications or legal intervention to protect the financial health of the scheme.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Can conduct rules be changed within a scheme? 
+              <i class="bi bi-plus-lg"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Conduct and Management rules can be amended via a special or unanimous resolution, depending on the rule type. These must then be approved and filed with CSOS to be enforceable.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="JavaScript/script.js"></script>
+  
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        faqItem.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
