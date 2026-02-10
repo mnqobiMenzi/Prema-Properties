@@ -1012,31 +1012,3 @@ footer {
 .social-icons a[title="YouTube"]:hover {
   background-color: #FF0000;
 }
-
-/* --- Footer Address Styling --- */
-.footer-address {
-  margin: 20px 0;
-  border-left: 2px solid var(--secondary); /* Small orange accent line */
-  padding-left: 15px;
-}
-
-.footer-address p {
-  font-size: 0.85rem !important;
-  line-height: 1.4 !important;
-  margin-bottom: 15px !important;
-  opacity: 0.9;
-  color: #cbd5e0; /* Matches other footer links */
-}
-
-.footer-address i {
-  color: var(--secondary);
-  margin-right: 8px;
-  font-size: 0.9rem;
-}
-
-.footer-address strong {
-  color: white;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
