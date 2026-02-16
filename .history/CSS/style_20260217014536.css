@@ -137,8 +137,36 @@ nav a:hover, nav a.active { color: var(--secondary); }
 }
 
 /* --- Trust Bar --- */
-.trust-bar { background: var(--primary); color: white; padding: 30px 0; }
-.trust-bar .container { display: flex; justify-content: space-around; text-align: center; }
+.trust-bar {
+    background-color: #1a365d; /* Prema Navy */
+    color: white;
+    padding: 30px 0;
+}
+
+.trust-bar .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* This is the key fix for wrapping */
+    gap: 20px;
+}
+
+.trust-item {
+    flex: 1;
+    min-width: 200px; /* Forces a wrap when space is less than 200px per item */
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .trust-item {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 15px;
+    }
+    
+    .trust-item:last-child {
+        border-bottom: none;
+    }
+}
 .trust-item strong { display: block; font-size: 1.8rem; color: var(--secondary); }
 
 /* --- Grid & Cards --- */
