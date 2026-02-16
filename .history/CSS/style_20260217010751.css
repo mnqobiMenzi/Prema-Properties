@@ -18,8 +18,6 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
   line-height: 1.8;
-  overflow-x: hidden;
-  width: 100%;
 }
 
 .container { width: 90%; max-width: 1200px; margin: 0 auto; }
@@ -1315,66 +1313,32 @@ nav a:hover, nav a.active { color: var(--secondary); }
 }
 
 /* Director Card Layout */
-/* Container for the Image and Info */
 .director-card {
-    display: flex;
-    flex-direction: row; /* Side by side on desktop */
-    align-items: center;
-    gap: 50px;           /* Gap between image and text */
-    background: #fff;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* Image side */
-.director-image {
-    flex: 1;             /* Takes up 50% of the space */
-    position: relative;
-    min-width: 300px;    /* Prevents image from getting too tiny */
-}
-
-.director-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    display: block;
-}
-
-/* Text side */
-.director-info {
-    flex: 1.2;           /* Gives text slightly more room than the image */
-}
-
-/* --- The Magic Fix for Tablet/Mobile --- */
-@media (max-width: 992px) {
-    .director-card {
-        flex-direction: column; /* Stacks image on top of text */
-        text-align: center;
-        padding: 20px;
-        gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  align-items: center;
 }
 
 .director-image {
-        max-width: 100%;
-        width: 100%;
-}
-
-.director-info hr {
-        margin: 20px auto; /* Centers the horizontal line */
-    }
+  position: relative;
 }
 
 .exp-seal {
-    position: absolute;
-    bottom: -15px;
-    right: -15px;
-    background: var(--secondary); /* Your orange color */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(216, 114, 52, 0.3);
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--secondary);
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 20px rgba(192, 86, 33, 0.3);
 }
 
 .linkedin-link {
@@ -2336,9 +2300,4 @@ nav a:hover, nav a.active { color: var(--secondary); }
     .logo {
         margin-bottom: 10px;
     }
-}
-
-.footer-column a i {
-    margin-right: 15px;
-    font-size: 1.5rem; /* Larger for mobile thumbs */
 }

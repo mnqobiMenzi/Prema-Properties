@@ -1373,8 +1373,7 @@ nav a:hover, nav a.active { color: var(--secondary); }
     color: white;
     padding: 10px 20px;
     border-radius: 50px;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(216, 114, 52, 0.3);
+    font-weight: bold;x-shadow: 0 5px 15px rgba(216, 114, 52, 0.3);
 }
 
 .linkedin-link {

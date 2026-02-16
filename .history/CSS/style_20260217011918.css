@@ -1353,28 +1353,29 @@ nav a:hover, nav a.active { color: var(--secondary); }
         text-align: center;
         padding: 20px;
         gap: 30px;
-}
+    }
 
-.director-image {
+    .director-image {
         max-width: 100%;
         width: 100%;
-}
+    }
 
-.director-info hr {
+    .director-info hr {
         margin: 20px auto; /* Centers the horizontal line */
     }
 }
 
 .exp-seal {
-    position: absolute;
-    bottom: -15px;
-    right: -15px;
-    background: var(--secondary); /* Your orange color */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(216, 114, 52, 0.3);
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--secondary);
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 20px rgba(192, 86, 33, 0.3);
 }
 
 .linkedin-link {
