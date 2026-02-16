@@ -208,8 +208,7 @@ nav a:hover, nav a.active { color: var(--secondary); }
   margin-top: 20px;
 }
 
-/* --- Contact Page V4 Rebuild (FIXED) --- */
-
+/* --- Contact Page V4 Rebuild --- */
 .contact-hero-v4 {
   background-color: var(--primary); /* Navy */
   color: white;
@@ -222,7 +221,6 @@ nav a:hover, nav a.active { color: var(--secondary); }
   grid-template-columns: 350px 1fr;
   gap: 60px;
   margin-top: -60px; /* Pulls form up into hero area slightly */
-  align-items: start;
 }
 
 /* Sidebar Details */
@@ -251,6 +249,17 @@ nav a:hover, nav a.active { color: var(--secondary); }
 .detail-card h5 { margin: 0; color: var(--primary); font-size: 1rem; }
 .detail-card p { margin: 0; font-size: 0.9rem; color: #666; }
 
+.consultation-box {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px dashed #cbd5e1;
+}
+
+.consultation-box i { font-size: 1.5rem; color: #64748b; margin-bottom: 10px; display: block; }
+.consultation-box p { font-size: 0.8rem; color: #64748b; line-height: 1.4; }
+
 /* Form Card V4 */
 .form-card-v4 {
   background: white;
@@ -261,20 +270,7 @@ nav a:hover, nav a.active { color: var(--secondary); }
 
 .form-heading { color: var(--primary); margin-bottom: 30px; font-weight: 800; }
 
-/* --- THE FIX: FORM ROW SPACING --- */
-.form-row {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr; /* Forces 2 columns */
-  gap: 25px;                      /* This prevents them from touching */
-  margin-bottom: 25px;
-  width: 100%;
-}
-
-.form-group-v4 { 
-  margin-bottom: 25px; 
-  width: 100%;
-}
-
+.form-group-v4 { margin-bottom: 25px; }
 .form-group-v4 label { 
   display: block; 
   font-weight: 700; 
@@ -282,29 +278,24 @@ nav a:hover, nav a.active { color: var(--secondary); }
   margin-bottom: 8px; 
   font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
-.form-group-v4 input, 
-.form-group-v4 select, 
-.form-group-v4 textarea {
+.form-group-v4 input, .form-group-v4 select, .form-group-v4 textarea {
   width: 100%;
-  box-sizing: border-box; /* ESSENTIAL: keeps padding inside the box */
-  padding: 14px 18px;
+  padding: 14px;
   border: 1.5px solid #e2e8f0;
   border-radius: 8px;
   font-size: 1rem;
   background: #fcfcfc;
-  transition: all 0.3s ease;
 }
 
-.form-group-v4 input:focus,
-.form-group-v4 select:focus,
-.form-group-v4 textarea:focus {
+.form-group-v4 input[type="text"] {
+  padding-right: 100rem;
+}
+.form-group-v4 input:focus {
   border-color: var(--secondary);
   outline: none;
   background: white;
-  box-shadow: 0 4px 12px rgba(192, 86, 33, 0.08);
 }
 
 .submit-btn-v4 {
@@ -317,29 +308,15 @@ nav a:hover, nav a.active { color: var(--secondary); }
   width: 100%;
   cursor: pointer;
   transition: 0.3s;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .submit-btn-v4:hover {
   background: var(--secondary);
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(192, 86, 33, 0.2);
 }
 
-/* Consultation Box */
-.consultation-box {
-  background: #f8fafc;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px dashed #cbd5e1;
-}
-
-/* Responsive Fixes */
 @media (max-width: 992px) {
   .contact-grid-v4 { grid-template-columns: 1fr; margin-top: 0; }
-  .form-row { grid-template-columns: 1fr; gap: 15px; } /* Stacks name/email on mobile */
   .form-card-v4 { padding: 30px; }
 }
 /* Services Specific Styles */
