@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Proposal | Prema Properties</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container header-flex">
+      <div class="logo">Prema<span>Properties</span></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="appointment.html">Book Appointment</a>
+        <a href="quote.html" class="nav-btn">Get a Quotation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="quote-v4">
+    <section class="quote-hero-v4">
+      <div class="container">
+        <span class="badge-v4">Professional Intake</span>
+        <h1>Request a Consulting Proposal</h1>
+        <p>Detailed, transparent pricing for Body Corporates, HOAs, and Developers.</p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <div class="quote-grid-v4">
+          
+          <div class="quote-form-v4">
+            <form id="masterQuoteForm">
+              
+              <div class="form-step">
+                <div class="step-title">
+                  <span class="step-num">01</span>
+                  <h3>Representative Details</h3>
+                </div>
+                <div class="form-row">
+                  <div class="input-v4">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="e.g., Sarah Peterson" required>
+                  </div>
+                  <div class="input-v4">
+                    <label>Your Role</label>
+                    <select required>
+                      <option value="trustee">Trustee</option>
+                      <option value="owner">Owner / Member</option>
+                      <option value="agent">Managing Agent</option>
+                      <option value="developer">Developer</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-step">
+                <div class="step-title">
+                  <span class="step-num">02</span>
+                  <h3>Scheme Profile</h3>
+                </div>
+                <div class="input-v4">
+                  <label>Name of Scheme (Body Corporate / HOA)</label>
+                  <input type="text" placeholder="The Oaks Sectional Title Scheme" required>
+                </div>
+                <div class="form-row">
+                  <div class="input-v4">
+                    <label>Number of Units</label>
+                    <input type="number" placeholder="e.g., 24">
+                  </div>
+                  <div class="input-v4">
+                    <label>Location</label>
+                    <input type="text" placeholder="Pretoria East / Sandton">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-step">
+                <div class="step-title">
+                  <span class="step-num">03</span>
+                  <h3>Scope of Services</h3>
+                </div>
+                <div class="services-selection-grid">
+                  <label class="service-pill">
+                    <input type="checkbox" name="srv" value="stsm">
+                    <span><i class="bi bi-shield-check"></i> STSM Compliance</span>
+                  </label>
+                  <label class="service-pill">
+                    <input type="checkbox" name="srv" value="audit">
+                    <span><i class="bi bi-list-check"></i> Rule Audit</span>
+                  </label>
+                  <label class="service-pill">
+                    <input type="checkbox" name="srv" value="financial">
+                    <span><i class="bi bi-graph-up"></i> 10-Year M&R Plan</span>
+                  </label>
+                  <label class="service-pill">
+                    <input type="checkbox" name="srv" value="csos">
+                    <span><i class="fa fa-gavel"></i> CSOS Mediation</span>
+                  </label>
+                </div>
+                <div class="input-v4" style="margin-top: 20px;">
+                  <label>Additional Context</label>
+                  <textarea rows="4" placeholder="Briefly describe the specific challenges or goals for your scheme..."></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="quote-submit-btn">Generate Proposal Request <i class="bi bi-file-earmark-pdf"></i></button>
+            </form>
+          </div>
+
+          <div class="quote-sidebar-v4">
+            <div class="process-card">
+              <h4>The Prema Process</h4>
+              <ul class="process-list">
+                <li>
+                  <div class="dot"></div>
+                  <div>
+                    <strong>Data Review</strong>
+                    <p>We analyze your scheme profile and specific legal needs.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="dot"></div>
+                  <div>
+                    <strong>Consultation</strong>
+                    <p>We may call to clarify specific rule or financial complexities.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="dot"></div>
+                  <div>
+                    <strong>Proposal Delivery</strong>
+                    <p>A formal consulting quote is sent via email within 24 hours.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="security-note">
+              <i class="bi bi-lock"></i>
+              <p>Your scheme's financial and legal data is encrypted and handled in compliance with POPIA.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="JavaScript/script.js"></script>
+</body>
+</html>
