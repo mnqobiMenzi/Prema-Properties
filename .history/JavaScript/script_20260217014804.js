@@ -24,13 +24,5 @@ document.querySelectorAll('.faq-question').forEach(button => {
         faqItem.classList.toggle('active');
       });
     });
-const btn = document.querySelector('.mobile-nav-toggle');
-const menu = document.querySelector('nav');
 
-btn.addEventListener('click', () => {
-  menu.classList.toggle('active');
-  btn.classList.toggle('open');
-
-// Prevents the home page from scrolling behind the menu
-  document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
-});
+    

@@ -31,6 +31,5 @@ btn.addEventListener('click', () => {
   menu.classList.toggle('active');
   btn.classList.toggle('open');
 
-// Prevents the home page from scrolling behind the menu
-  document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+  
 });

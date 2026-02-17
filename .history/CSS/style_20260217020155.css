@@ -33,7 +33,7 @@ body {
   padding: 20px 0;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
   position: sticky;
-  top: 0;
+  top: 0; 
   z-index: 1000;
 }
 
@@ -93,104 +93,40 @@ nav a:hover, nav a.active { color: var(--secondary); }
 }
 
 /* --- RESPONSIVE FIX (The Burger Magic) --- */
-/* --- RESPONSIVE FIX (The Burger Magic) --- */
 @media (max-width: 992px) {
   .mobile-nav-toggle {
-    display: flex; /* Ensure it's visible */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 1200; /* Stays above everything */
-    transition: all 0.3s ease;
-  }
-
-  /* Moves the button ONLY when the menu is open */
-  .mobile-nav-toggle.open {
-    position: fixed;
-    top: 40px; 
-    right: 40px;
+    display: flex; /* Reveal burger icon */
   }
 
   nav {
     position: fixed;
     top: 0;
     right: -100%; /* Hide off-screen */
-    width: 100%;  /* Full screen width avoids alignment crowding */
+    width: 280px;
     height: 100vh;
     background-color: var(--white);
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center links horizontally */
+    gap: 20px;
     transition: 0.4s ease-in-out;
-    z-index: 1100;
+    box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+    z-index: 1050;
   }
 
+  /* When the 'active' class is added via JS */
   nav.active {
     right: 0;
-    display: flex;
   }
 
   nav a {
-    margin: 15px 0 !important;
-    font-size: 1.5rem; /* Larger for better touch targets */
-    text-align: center;
+    margin-left: 0; /* Remove desktop margin */
+    font-size: 1.2rem;
   }
 
   /* Hamburger to X Animation */
-  .mobile-nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+  .mobile-nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
   .mobile-nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .mobile-nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
-}/* --- RESPONSIVE FIX (The Burger Magic) --- */
-@media (max-width: 992px) {
-  .mobile-nav-toggle {
-    display: flex; /* Ensure it's visible */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 1200; /* Stays above everything */
-    transition: all 0.3s ease;
-  }
-
-  /* Moves the button ONLY when the menu is open */
-  .mobile-nav-toggle.open {
-    position: fixed;
-    top: 40px; 
-    right: 40px;
-  }
-
-  nav {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Hide off-screen */
-    width: 100%;  /* Full screen width avoids alignment crowding */
-    height: 100vh;
-    background-color: var(--white);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Center links horizontally */
-    transition: 0.4s ease-in-out;
-    z-index: 1100;
-  }
-
-  nav.active {
-    right: 0;
-    display: flex;
-  }
-
-  nav a {
-    margin: 15px 0 !important;
-    font-size: 1.5rem; /* Larger for better touch targets */
-    text-align: center;
-  }
-
-  /* Hamburger to X Animation */
-  .mobile-nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-  .mobile-nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .mobile-nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
+  .mobile-nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(7px, -8px); }
 }
 
 /* --- Hero v2 --- */

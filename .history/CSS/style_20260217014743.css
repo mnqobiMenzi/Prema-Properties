@@ -27,52 +27,18 @@ body {
 .light-gray { background: var(--gray); }
 
 /* --- Header --- */
-/* --- Base Header & Desktop (Stay as is) --- */
 .main-header {
   background: var(--white);
   padding: 20px 0;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
   position: sticky;
-  top: 0;
-  z-index: 1000;
+  top: 0; z-index: 1000;
 }
 
-.header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+.header-flex { display: flex; justify-content: space-between; align-items: center; }
 
 .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
 .logo span { color: var(--secondary); }
-
-/* --- Burger Button (Hidden on Desktop) --- */
-.mobile-nav-toggle {
-  display: none; /* Only visible on mobile */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1100;
-}
-
-.mobile-nav-toggle span {
-  width: 100%;
-  height: 3px;
-  background-color: var(--primary);
-  border-radius: 10px;
-  transition: all 0.3s linear;
-}
-
-/* --- Navigation & Mobile Logic --- */
-nav {
-  display: flex;
-  align-items: center;
-}
 
 nav a {
   text-decoration: none;
@@ -90,107 +56,6 @@ nav a:hover, nav a.active { color: var(--secondary); }
   color: white !important;
   padding: 10px 20px;
   border-radius: 5px;
-}
-
-/* --- RESPONSIVE FIX (The Burger Magic) --- */
-/* --- RESPONSIVE FIX (The Burger Magic) --- */
-@media (max-width: 992px) {
-  .mobile-nav-toggle {
-    display: flex; /* Ensure it's visible */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 1200; /* Stays above everything */
-    transition: all 0.3s ease;
-  }
-
-  /* Moves the button ONLY when the menu is open */
-  .mobile-nav-toggle.open {
-    position: fixed;
-    top: 40px; 
-    right: 40px;
-  }
-
-  nav {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Hide off-screen */
-    width: 100%;  /* Full screen width avoids alignment crowding */
-    height: 100vh;
-    background-color: var(--white);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Center links horizontally */
-    transition: 0.4s ease-in-out;
-    z-index: 1100;
-  }
-
-  nav.active {
-    right: 0;
-    display: flex;
-  }
-
-  nav a {
-    margin: 15px 0 !important;
-    font-size: 1.5rem; /* Larger for better touch targets */
-    text-align: center;
-  }
-
-  /* Hamburger to X Animation */
-  .mobile-nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-  .mobile-nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .mobile-nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
-}/* --- RESPONSIVE FIX (The Burger Magic) --- */
-@media (max-width: 992px) {
-  .mobile-nav-toggle {
-    display: flex; /* Ensure it's visible */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 1200; /* Stays above everything */
-    transition: all 0.3s ease;
-  }
-
-  /* Moves the button ONLY when the menu is open */
-  .mobile-nav-toggle.open {
-    position: fixed;
-    top: 40px; 
-    right: 40px;
-  }
-
-  nav {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Hide off-screen */
-    width: 100%;  /* Full screen width avoids alignment crowding */
-    height: 100vh;
-    background-color: var(--white);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Center links horizontally */
-    transition: 0.4s ease-in-out;
-    z-index: 1100;
-  }
-
-  nav.active {
-    right: 0;
-    display: flex;
-  }
-
-  nav a {
-    margin: 15px 0 !important;
-    font-size: 1.5rem; /* Larger for better touch targets */
-    text-align: center;
-  }
-
-  /* Hamburger to X Animation */
-  .mobile-nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-  .mobile-nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .mobile-nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
 }
 
 /* --- Hero v2 --- */
@@ -2508,4 +2373,56 @@ nav a:hover, nav a.active { color: var(--secondary); }
 .footer-column a i {
     margin-right: 15px;
     font-size: 1.5rem; /* Larger for mobile thumbs */
+}
+
+/* --- Desktop: Hide Burger Button --- */
+.mobile-nav-toggle {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #1a365d; /* Prema Navy */
+    transition: 0.3s;
+}
+
+/* --- Mobile: Activate Burger Menu --- */
+@media (max-width: 992px) {
+    .mobile-nav-toggle {
+        display: block;
+        z-index: 1001;
+    }
+
+    /* Hide standard nav and turn into vertical overlay */
+    .nav-menu {
+        position: fixed;
+        right: -100%; /* Hidden off-screen */
+        top: 0;
+        width: 70%;
+        height: 100vh;
+        background: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s ease-in-out;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    /* When menu is open */
+    .nav-menu.active {
+        right: 0;
+    }
+
+    /* Animate Burger to 'X' */
+    .mobile-nav-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .mobile-nav-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .mobile-nav-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }

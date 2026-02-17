@@ -24,13 +24,19 @@ document.querySelectorAll('.faq-question').forEach(button => {
         faqItem.classList.toggle('active');
       });
     });
-const btn = document.querySelector('.mobile-nav-toggle');
-const menu = document.querySelector('nav');
 
-btn.addEventListener('click', () => {
-  menu.classList.toggle('active');
-  btn.classList.toggle('open');
+const burger = document.querySelector('.mobile-nav-toggle');
+const nav = document.querySelector('.nav-menu');
 
-// Prevents the home page from scrolling behind the menu
-  document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.classList.toggle('active');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        burger.classList.remove('active');
+    });
 });
