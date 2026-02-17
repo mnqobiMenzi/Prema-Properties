@@ -24,18 +24,13 @@ document.querySelectorAll('.faq-question').forEach(button => {
         faqItem.classList.toggle('active');
       });
     });
-    
-const toggleBtn = document.getElementById('mobile-toggle');
-const navMenu = document.querySelector('nav'); // Targets your <nav> tag
+const btn = document.querySelector('.mobile-nav-toggle');
+const menu = document.querySelector('nav');
 
-toggleBtn.addEventListener('click', () => {
-    toggleBtn.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    
-    // Prevents background scrolling when menu is open
-    if (navMenu.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+btn.addEventListener('click', () => {
+  menu.classList.toggle('active');
+  btn.classList.toggle('open');
+
+// Prevents the home page from scrolling behind the menu
+  document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
 });

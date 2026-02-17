@@ -26,23 +26,27 @@ body {
 .section-padding { padding: 100px 0; }
 .light-gray { background: var(--gray); }
 
+/* --- Header --- */
 /* --- Header & Desktop Navigation --- */
 .main-header {
   background: var(--white);
-  padding: 20px 0;
+  padding: 15px 0;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.header-flex { 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* DESKTOP NAV: Default horizontal view */
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+.logo span { color: var(--secondary); }
+
+/* Desktop Nav (Horizontal) */
 nav {
   display: flex;
   align-items: center;
@@ -57,74 +61,84 @@ nav a {
   transition: var(--transition);
 }
 
+nav a:hover, nav a.active { color: var(--secondary); }
+
+.nav-btn {
+  background: var(--primary);
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* --- Burger Button Styling --- */
 .mobile-nav-toggle {
-  display: none; /* Hidden on desktop */
+  display: none; /* Hidden on Desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 2000; /* Stays above the menu */
+  background: transparent;
+  border: none;
 }
 
-/* --- MOBILE DRAWER LOGIC (Fixes the 'Always Open' issue) --- */
+.mobile-nav-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+/* --- Responsive Fixes (The Burger Magic) --- */
 @media (max-width: 992px) {
-    .mobile-nav-toggle {
-        display: block;
-        cursor: pointer;
-        z-index: 2000; /* Stays above the drawer */
-        background: none;
-        border: none;
-        padding: 10px;
-    }
+  .mobile-nav-toggle {
+    display: flex; /* Show only on mobile */
+  }
 
-    .bar {
-        display: block;
-        width: 28px;
-        height: 3px;
-        margin: 5px auto;
-        background-color: var(--primary);
-        transition: 0.3s ease-in-out;
-    }
+  /* Moves the X away from links when menu is open */
+  .mobile-nav-toggle.open {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+  }
 
-    /* THE FIX: We target 'nav' directly and hide it off-screen */
-    nav {
-        position: fixed;
-        top: 0;
-        right: -100%; /* HIDDEN off-screen to the right */
-        height: 100vh;
-        width: 100%;  /* Full screen width for better look */
-        background-color: white;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1500;
-    }
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden off-screen */
+    width: 100%;
+    height: 100vh;
+    background-color: var(--white);
+    flex-direction: column;
+    justify-content: center; /* Center links vertically */
+    align-items: center;    /* Center links horizontally */
+    transition: 0.4s ease-in-out;
+    z-index: 1500;
+  }
 
-    /* Show only when active */
-    nav.active {
-        right: 0; /* Slides into view */
-    }
+  nav.active {
+    right: 0; /* Slide in */
+  }
 
-    nav a {
-        margin: 15px 0 !important;
-        margin-left: 0 !important; /* Removes desktop left-margin */
-        font-size: 1.5rem;
-    }
-    
-    /* Move toggle button to fixed position when menu is open */
-    .mobile-nav-toggle.active {
-        position: fixed;
-        top: 25px;
-        right: 20px;
-    }
+  nav a {
+    margin: 15px 0 !important; /* Vertical spacing only */
+    font-size: 1.4rem;
+    text-align: center;
+  }
 
-    /* Burger to X Animation */
-    .mobile-nav-toggle.active .bar:nth-child(2) { opacity: 0; }
-    .mobile-nav-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .mobile-nav-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  /* Hamburger to X Transformation */
+  .mobile-nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+  .mobile-nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .mobile-nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
 }
+
 /* --- Hero v2 --- */
 .hero-v2 {
     position: relative;
     width: 100%;
     /* Use min-height so it can grow if text expands */
-    min-height: 85vh;
+    min-height: 85vh; 
     background-image: url('images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
@@ -2384,7 +2398,7 @@ nav a:hover, nav a.active { color: var(--secondary); }
 }
 
 /* Icon styling inside buttons */
-.btn-primary i,
+.btn-primary i, 
 .quote-submit-btn i {
     font-size: 1.2rem;
 }
@@ -2395,63 +2409,137 @@ nav a:hover, nav a.active { color: var(--secondary); }
 }
 
 /* --- Mobile Responsive Fix --- */
-/* --- Mobile Burger Logic --- */
-@media (max-width: 992px) {
-    .mobile-nav-toggle {
-        display: block; /* Show burger icon */
-        cursor: pointer;
-        z-index: 2000;
-        background: none;
-        border: none;
-        position: relative;
+@media (max-width: 768px) {
+    /* Stack header elements vertically */
+    .header-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
     }
 
-    /* Move the X to the corner when active so it doesn't hit 'Home' */
+    /* Force Nav links to stack vertically */
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    nav a {
+        margin: 10px 0 !important; /* Spacing between stacked links */
+        width: 90%; /* Makes links easier to tap on mobile */
+        font-size: 1.1rem;
+    }
+
+    /* Fix the "Get a Quotation" button overflow */
+    .nav-btn {
+        display: inline-block;
+        width: 80% !important;
+        margin: 15px auto !important;
+    }
+
+    /* Adjust the logo for mobile */
+    .logo {
+        margin-bottom: 10px;
+    }
+}
+
+.footer-column a i {
+    margin-right: 15px;
+    font-size: 1.5rem; /* Larger for mobile thumbs */
+}
+
+/* --- Desktop Header (Clean & Static) --- */
+.main-header {
+    background: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0; 
+    z-index: 1000;
+}
+
+.header-flex { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* Default Nav - Horizontal for Desktop */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    margin-left: 25px;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover { color: var(--secondary); }
+
+/* --- The Burger Button --- */
+.mobile-nav-toggle {
+    display: none; /* Hidden on Desktop */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 2000;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #1a365d;
+    transition: 0.3s;
+}
+
+/* --- Mobile Logic (992px) --- */
+@media (max-width: 992px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    /* Move X to corner ONLY when menu is open */
     .mobile-nav-toggle.active {
         position: fixed;
         top: 25px;
         right: 20px;
     }
 
-    /* Target 'nav' directly to match your HTML */
-    nav {
+    .nav-menu {
         position: fixed;
+        right: -100%; /* Hidden */
         top: 0;
-        right: -100%; /* Hidden off-screen */
+        width: 100%; /* Full screen width to prevent scrunching */
         height: 100vh;
-        width: 100%;  /* Full screen width */
-        background-color: white;
-        display: flex;
+        background: #ffffff;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: 0.4s ease-in-out;
         z-index: 1500;
-        margin: 0;
     }
 
-    /* Toggle State */
-    nav.active {
-        right: 0; /* Slides into view */
+    .nav-menu.active {
+        right: 0;
     }
 
-    nav a {
-        margin: 15px 0 !important;
-        margin-left: 0 !important;
+    .nav-menu a {
+        margin: 20px 0 !important; /* Spacing between menu options */
+        margin-left: 0; /* Remove desktop margin */
         font-size: 1.5rem;
-        width: 100%;
-        text-align: center;
     }
 
-    .bar {
-        display: block;
-        width: 28px;
-        height: 3px;
-        margin: 5px auto;
-        background-color: #1a365d;
-        transition: all 0.3s ease-in-out;
-    }
-
+    /* Animation: Burger to X */
     .mobile-nav-toggle.active .bar:nth-child(2) { opacity: 0; }
     .mobile-nav-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .mobile-nav-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }

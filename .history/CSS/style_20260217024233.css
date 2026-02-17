@@ -26,13 +26,14 @@ body {
 .section-padding { padding: 100px 0; }
 .light-gray { background: var(--gray); }
 
+/* --- Header --- */
 /* --- Header & Desktop Navigation --- */
 .main-header {
   background: var(--white);
   padding: 20px 0;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
   position: sticky;
-  top: 0;
+  top: 0; 
   z-index: 1000;
 }
 
@@ -2384,7 +2385,7 @@ nav a:hover, nav a.active { color: var(--secondary); }
 }
 
 /* Icon styling inside buttons */
-.btn-primary i,
+.btn-primary i, 
 .quote-submit-btn i {
     font-size: 1.2rem;
 }
@@ -2395,52 +2396,68 @@ nav a:hover, nav a.active { color: var(--secondary); }
 }
 
 /* --- Mobile Responsive Fix --- */
-/* --- Mobile Burger Logic --- */
-@media (max-width: 992px) {
-    .mobile-nav-toggle {
-        display: block; /* Show burger icon */
-        cursor: pointer;
-        z-index: 2000;
-        background: none;
-        border: none;
-        position: relative;
+@media (max-width: 768px) {
+    /* Stack header elements vertically */
+    .header-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
     }
 
-    /* Move the X to the corner when active so it doesn't hit 'Home' */
-    .mobile-nav-toggle.active {
-        position: fixed;
-        top: 25px;
-        right: 20px;
-    }
-
-    /* Target 'nav' directly to match your HTML */
+    /* Force Nav links to stack vertically */
     nav {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Hidden off-screen */
-        height: 100vh;
-        width: 100%;  /* Full screen width */
-        background-color: white;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1500;
+        width: 100%;
         margin: 0;
     }
 
-    /* Toggle State */
-    nav.active {
-        right: 0; /* Slides into view */
+    nav a {
+        margin: 10px 0 !important; /* Spacing between stacked links */
+        width: 90%; /* Makes links easier to tap on mobile */
+        font-size: 1.1rem;
     }
 
-    nav a {
-        margin: 15px 0 !important;
-        margin-left: 0 !important;
-        font-size: 1.5rem;
-        width: 100%;
-        text-align: center;
+    /* Fix the "Get a Quotation" button overflow */
+    .nav-btn {
+        display: inline-block;
+        width: 80% !important;
+        margin: 15px auto !important;
+    }
+
+    /* Adjust the logo for mobile */
+    .logo {
+        margin-bottom: 10px;
+    }
+}
+
+.footer-column a i {
+    margin-right: 15px;
+    font-size: 1.5rem; /* Larger for mobile thumbs */
+}
+
+/* --- Desktop: Hide Burger Button --- */
+/* --- Desktop Layout --- */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.mobile-nav-toggle {
+    display: none; /* Hide on desktop */
+}
+
+/* --- Mobile Burger Logic --- */
+@media (max-width: 992px) {
+    .mobile-nav-toggle {
+        display: block;
+        cursor: pointer;
+        z-index: 1100;
+        background: none;
+        border: none;
     }
 
     .bar {
@@ -2448,8 +2465,30 @@ nav a:hover, nav a.active { color: var(--secondary); }
         width: 28px;
         height: 3px;
         margin: 5px auto;
-        background-color: #1a365d;
+        background-color: #1a365d; /* Prema Navy */
         transition: all 0.3s ease-in-out;
+    }
+
+    /* The Drawer Menu */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Completely off-screen */
+        height: 100vh;
+        width: 70%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: 0.4s ease;
+        z-index: 1000;
+    }
+
+    /* Toggle State */
+    .nav-menu.active {
+        right: 0; /* Slides into view */
     }
 
     .mobile-nav-toggle.active .bar:nth-child(2) { opacity: 0; }
