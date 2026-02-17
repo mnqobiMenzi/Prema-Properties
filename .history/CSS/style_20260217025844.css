@@ -2457,7 +2457,7 @@ nav a:hover, nav a.active { color: var(--secondary); }
     .mobile-nav-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
 
-/* Add extra space before the button on desktop */
+uuuu/* Add extra space before the button on desktop */
 .nav-btn {
     margin-left: 45px !important; /* Increase this number to increase the gap */
     width: auto !important; /* Fixes the stretching issue you mentioned */

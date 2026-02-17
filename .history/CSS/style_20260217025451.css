@@ -2456,31 +2456,3 @@ nav a:hover, nav a.active { color: var(--secondary); }
     .mobile-nav-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .mobile-nav-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
-
-/* Add extra space before the button on desktop */
-.nav-btn {
-    margin-left: 45px !important; /* Increase this number to increase the gap */
-    width: auto !important; /* Fixes the stretching issue you mentioned */
-    display: inline-flex !important;
-}
-
-/* Ensure spacing remains vertical on mobile */
-@media (max-width: 992px) {
-    .nav-btn {
-        margin-left: 0 !important;
-        margin-top: 30px !important; /* Space above button in mobile drawer */
-    }
-}/* Add extra space before the button on desktop */
-.nav-btn {
-    margin-left: 45px !important; /* Increase this number to increase the gap */
-    width: auto !important; /* Fixes the stretching issue you mentioned */
-    display: inline-flex !important;
-}
-
-/* Ensure spacing remains vertical on mobile */
-@media (max-width: 992px) {
-    .nav-btn {
-        margin-left: 0 !important;
-        margin-top: 30px !important; /* Space above button in mobile drawer */
-    }
-}
